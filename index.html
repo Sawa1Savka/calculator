@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <script src="../js/script.js"></script>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="calculator">
+      <input type="text" id="result" onkeypress="handleKeyPress(event)">
+      <div class="button-row">
+        <input type="button" value="1" onclick="appendNumber('1')">
+        <input type="button" value="2" onclick="appendNumber('2')">
+        <input type="button" value="3" onclick="appendNumber('3')">
+        <input type="button" value="+" onclick="appendOperator('+')">
+      </div>
+      <div class="button-row">
+        <input type="button" value="4" onclick="appendNumber('4')">
+        <input type="button" value="5" onclick="appendNumber('5')">
+        <input type="button" value="6" onclick="appendNumber('6')">
+        <input type="button" value="-" onclick="appendOperator('-')">
+      </div>
+      <div class="button-row">
+        <input type="button" value="7" onclick="appendNumber('7')">
+        <input type="button" value="8" onclick="appendNumber('8')">
+        <input type="button" value="9" onclick="appendNumber('9')">
+        <input type="button" value="*" onclick="appendOperator('*')">
+      </div>
+      <div class="button-row">
+        <input type="button" value="%" onclick="appendOperator('%')">
+        <input type="button" value="0" onclick="appendNumber('0')">
+        <input type="button" value="=" onclick="calculateResult()">
+        <input type="button" value="/" onclick="appendOperator('/')">
+      </div>
+      <div class="button-row">
+        <input type="button" value="√" onclick="appendOperator('√')">
+        <input type="button" value="C" onclick="clearResult()">
+      </div>
+    </div>
+  </div>
+ </body>
+ </html>

@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  width: 300px;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+#result {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.button-row {
+  display: flex;
+}
+
+.button-row input[type="button"] {
+  flex: 1;
+  margin-right: 2%;
+  width: 25%;
+  height: 50px; /* Изменили высоту кнопок */
+  font-size: 16px; /* Изменили размер шрифта кнопок */
+}
