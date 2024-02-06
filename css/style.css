@@ -11,11 +11,35 @@
   background-color: #f2f2f2;
 }
 
-#result {
-  width: 100%;
+.input-row {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
+}
+
+#result {
+  flex: 1;
+  margin-right: 10px;
   padding: 5px;
   font-size: 20px;
+}
+
+.history {
+  margin-bottom: 10px;
+}
+
+.history h3 {
+  margin-top: 0;
+}
+
+.history ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history li {
+  margin-bottom: 5px;
 }
 
 .button-row {
@@ -26,6 +50,6 @@
   flex: 1;
   margin-right: 2%;
   width: 25%;
-  height: 50px; /* Изменили высоту кнопок */
-  font-size: 16px; /* Изменили размер шрифта кнопок */
+  height: 50px;
+  font-size: 16px;
 }
