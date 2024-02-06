@@ -13,9 +13,10 @@
       <div class="input-row">
         <input type="text" id="result" onkeypress="handleKeyPress(event)">
       </div>
-      <div class="history">
+      <div class="history" style="display: none;">
         <h3>История операций:</h3>
         <ul id="history-list"></ul>
+        <button onclick="clearHistory()">Очистить историю</button>
       </div>
       <div class="button-row">
         <input type="button" value="1" onclick="appendNumber('1')">
@@ -36,14 +37,19 @@
         <input type="button" value="*" onclick="appendOperator('*')">
       </div>
       <div class="button-row">
-        <input type="button" value="%" onclick="appendOperator('%')">
+        <input type="button" value="(" onclick="appendBracket('(')">
         <input type="button" value="0" onclick="appendNumber('0')">
-        <input type="button" value="=" onclick="calculateResult()">
+        <input type="button" value=")" onclick="appendBracket(')')">
         <input type="button" value="/" onclick="appendOperator('/')">
       </div>
       <div class="button-row">
+        <input type="button" value="%" onclick="appendOperator('%')">
         <input type="button" value="√" onclick="appendOperator('√')">
+        <input type="button" value="=" onclick="calculateResult()">
         <input type="button" value="C" onclick="clearResult()">
+      </div>
+      <div class="button-row"></div>
+        <button onclick="undoLastAction()">Отменить</button>
       </div>
     </div>
   </div>

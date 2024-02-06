@@ -2,14 +2,22 @@
 
 function appendNumber(number) {
   document.getElementById("result").value += number;
+  document.getElementById("result").focus(); // Установка фокуса после нажатия кнопки
 }
 
 function appendOperator(operator) {
   document.getElementById("result").value += operator;
+  document.getElementById("result").focus(); // Установка фокуса после нажатия кнопки
+}
+
+function appendBracket(bracket) {
+  document.getElementById("result").value += bracket;
+  document.getElementById("result").focus(); // Установка фокуса после нажатия кнопки
 }
 
 function clearResult() {
   document.getElementById("result").value = "";
+  document.getElementById("result").focus(); // Установка фокуса после нажатия кнопки
 }
 
 function calculateResult() {
@@ -19,12 +27,15 @@ function calculateResult() {
   const result = eval(expression);
   document.getElementById("result").value = result;
   addToHistory(expression, result);
+  document.getElementById("result").focus(); // Установка фокуса после нажатия кнопки
 }
 
 function addToHistory(expression, result) {
   const historyItem = `${expression} = ${result}`;
   history.push(historyItem);
-  if (history.length > 5) {
+  if (history.length === 1) {
+    document.querySelector('.history').style.display = 'block';
+  } else if (history.length > 5) {
     history.shift(); // Удаляем самую старую операцию
   }
   renderHistory();
@@ -39,6 +50,26 @@ function renderHistory() {
     listItem.textContent = item;
     historyList.appendChild(listItem);
   }
+}
+
+function undoLastAction() {
+  if (history.length > 0) {
+    history.pop();
+    renderHistory();
+    if (history.length === 0) {
+      document.querySelector('.history').style.display = 'none';
+    }
+  }
+  clearResult();
+  document.getElementById("result").focus(); // Установка фокуса после нажатия кнопки
+}
+
+function clearHistory() {
+  history = [];
+  renderHistory();
+  document.querySelector('.history').style.display = 'none';
+  clearResult();
+  document.getElementById("result").focus(); // Установка фокуса после нажатия кнопки
 }
 
 function handleKeyPress(event) {
